@@ -17,6 +17,7 @@ const {src, dest} = require('gulp'),
     notify = require('gulp-notify'),
     browserSync = require('browser-sync').create(),
     fileinclude = require('gulp-file-include'),
+    ghPages = require('gulp-gh-pages'),
 
 /* Paths */
     srcPath = 'src/',
@@ -140,6 +141,10 @@ function fonts() {
         .pipe(dest(path.build.fonts))
         .pipe(browserSync.reload({stream: true}));
 }
+
+gulp.task('deploy', function() {
+    return gulp.src('./dist/**/*').pipe(ghPages());
+});
 
 function clean() {
     return del(path.clean)

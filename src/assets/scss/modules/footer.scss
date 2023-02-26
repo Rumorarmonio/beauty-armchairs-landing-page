@@ -4,10 +4,16 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     width: 100%;
     max-width: $main-width;
     margin: auto;
-    height: 120px;
+    padding: 38px 0;
+
+    @media (max-width: $bp900) {
+      flex-direction: column;
+      gap: 20px
+    }
   }
 
   &__socials {
@@ -23,7 +29,9 @@
   &__right {
     display: flex;
     gap: 40px;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
   }
 
   &__telephone {

@@ -82,18 +82,18 @@ function css() {
         .pipe(autoprefixer())
         .pipe(cssbeautify())
         .pipe(dest(path.build.css))
-        .pipe(cssnano({
-            zindex: false,
-            discardComments: {
-                removeAll: true
-            }
-        }))
-        .pipe(removeComments())
-        .pipe(rename({
-            suffix: '.min',
-            extname: '.css'
-        }))
-        .pipe(dest(path.build.css))
+        // .pipe(cssnano({
+        //     zindex: false,
+        //     discardComments: {
+        //         removeAll: true
+        //     }
+        // }))
+        // .pipe(removeComments())
+        // .pipe(rename({
+        //     suffix: '.min',
+        //     extname: '.css'
+        // }))
+        // .pipe(dest(path.build.css))
         .pipe(browserSync.reload({stream: true}));
 }
 

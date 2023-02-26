@@ -2,9 +2,9 @@
   &__top {
     display: flex;
     align-items: center;
-    height: 50px;
+    padding: 18px 0;
     background-color: $grey;
-    margin-bottom: 22px;
+    margin-bottom: 18px;
   }
 
   &__center {
@@ -15,9 +15,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
       width: 100%;
       max-width: $main-width;
       margin: auto;
+
+      @media (max-width: $bp600) {
+        flex-direction: column;
+      }
     }
   }
 
@@ -37,10 +42,10 @@
   }
 
   &__bottom {
-    height: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 31px 0;
   }
 }
 
@@ -62,20 +67,37 @@
 
 .menu {
   display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+
+  @media (max-width: $bp500) {
+    flex-direction: column;
+  }
 
   &_top {
     margin: auto;
     gap: 31px;
+
+    @media (max-width: $bp500) {
+      gap: 15px;
+    }
   }
 
   &_bottom {
     gap: 41px;
     color: #000;
+
+    @media (max-width: $bp500) {
+      gap: 15px;
+    }
   }
 }
 
 .menu__item {
   font-size: 14px;
+  @media (max-width: $bp500) {
+    text-align: center;
+  }
 
   &_bottom {
     font-size: 16px;

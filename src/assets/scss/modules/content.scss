@@ -1,6 +1,6 @@
 .main {
   background-color: $grey;
-  padding-top: 62px;
+  padding-top: 59px;
   padding-bottom: 131px;
 
   &__wrapper {
@@ -29,6 +29,8 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    align-items: stretch;
+    gap: 31px;
     margin-bottom: 71px;
   }
 
@@ -36,10 +38,15 @@
     display: flex;
     align-items: stretch;
     gap: 30px;
+
+    @media(max-width: $bp900) {
+      flex-direction: column;
+    }
   }
 }
 
 .chair-card {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,7 +54,8 @@
   gap: 16px;
   background-color: #fff;
   padding: 24px 30px;
-  margin-bottom: 30px;
+  max-width: 90%;
+  margin: 0 auto 30px;
 
   &__title {
     width: 100%;
@@ -80,6 +88,10 @@
   background-color: $green;
   padding: 36px 40px;
 
+  @media (max-width: $bp500) {
+    justify-content: center;
+  }
+
   &__left {
     width: 100%;
     max-width: 260px;
@@ -87,21 +99,37 @@
     flex-direction: column;
     align-items: start;
     gap: 23px;
+
+    @media (max-width: $bp500) {
+      align-items: center;
+    }
   }
 
   &__title {
     font-weight: 700;
     font-size: 18px;
+
+    @media (max-width: $bp500) {
+      text-align: center;
+    }
   }
 
   &__description {
     font-size: 14px;
     line-height: 20px;
+
+    @media (max-width: $bp500) {
+      text-align: center;
+    }
   }
 
   &__image {
     width: 140px;
     height: 107px;
+
+    @media (max-width: $bp500) {
+      display: none;
+    }
   }
 
   &__input {
@@ -110,7 +138,7 @@
     height: 35px;
     border: none;
     border-radius: 30px;
-    padding-left: 26px;
+    padding: 0 26px;
     font-size: 14px;
   }
 

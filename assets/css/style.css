@@ -591,19 +591,14 @@ a {
 
 body {
   font: 400 20px/1.2 "Roboto";
-  color: #333;
-}
-
-h1 {
-  font-size: 40px;
 }
 
 .header__top {
   display: flex;
   align-items: center;
-  height: 50px;
+  padding: 18px 0;
   background-color: #EFEFEF;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 .header__center {
   border-bottom: 1px solid #EFEFEF;
@@ -613,9 +608,15 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   width: 100%;
   max-width: 1110px;
   margin: auto;
+}
+@media (max-width: 600px) {
+  .header__center-wrapper {
+    flex-direction: column;
+  }
 }
 .header__right {
   display: flex;
@@ -637,10 +638,10 @@ h1 {
   border-radius: 30px;
 }
 .header__bottom {
-  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 31px 0;
 }
 
 .logo__image {
@@ -658,18 +659,40 @@ h1 {
 
 .menu {
   display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+@media (max-width: 500px) {
+  .menu {
+    flex-direction: column;
+  }
 }
 .menu_top {
   margin: auto;
   gap: 31px;
 }
+@media (max-width: 500px) {
+  .menu_top {
+    gap: 15px;
+  }
+}
 .menu_bottom {
   gap: 41px;
   color: #000;
 }
+@media (max-width: 500px) {
+  .menu_bottom {
+    gap: 15px;
+  }
+}
 
 .menu__item {
   font-size: 14px;
+}
+@media (max-width: 500px) {
+  .menu__item {
+    text-align: center;
+  }
 }
 .menu__item_bottom {
   font-size: 16px;
@@ -685,9 +708,15 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   width: 100%;
   max-width: 1110px;
   margin: auto;
+}
+@media (max-width: 1000px) {
+  .intro__wrapper {
+    justify-content: space-around;
+  }
 }
 .intro__description {
   display: flex;
@@ -697,13 +726,24 @@ h1 {
   width: 100%;
   max-width: 310px;
 }
+@media (max-width: 900px) {
+  .intro__description {
+    align-items: center;
+  }
+}
 .intro__title {
+  text-align: center;
   font-weight: 700;
   font-size: 48px;
 }
 .intro__text {
   font-size: 14px;
   line-height: 20px;
+}
+@media (max-width: 900px) {
+  .intro__text {
+    text-align: center;
+  }
 }
 .intro__button {
   font-size: 14px;
@@ -716,13 +756,18 @@ h1 {
   border-radius: 30px;
 }
 .intro__image {
-  width: 584px;
-  height: 584px;
+  max-width: 100%;
+  max-height: 100%;
 }
 .intro__right {
   position: relative;
   margin-right: 69px;
   transform-style: preserve-3d;
+}
+@media (max-width: 1000px) {
+  .intro__right {
+    margin-right: 0;
+  }
 }
 .intro__right::before {
   content: "";
@@ -749,7 +794,7 @@ h1 {
 
 .main {
   background-color: #EFEFEF;
-  padding-top: 62px;
+  padding-top: 59px;
   padding-bottom: 131px;
 }
 .main__wrapper {
@@ -774,6 +819,8 @@ h1 {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  align-items: stretch;
+  gap: 31px;
   margin-bottom: 71px;
 }
 .main__contacts {
@@ -781,8 +828,14 @@ h1 {
   align-items: stretch;
   gap: 30px;
 }
+@media (max-width: 900px) {
+  .main__contacts {
+    flex-direction: column;
+  }
+}
 
 .chair-card {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -790,7 +843,8 @@ h1 {
   gap: 16px;
   background-color: #fff;
   padding: 24px 30px;
-  margin-bottom: 30px;
+  max-width: 90%;
+  margin: 0 auto 30px;
 }
 .chair-card__title {
   width: 100%;
@@ -827,6 +881,11 @@ h1 {
   background-color: #66C05D;
   padding: 36px 40px;
 }
+@media (max-width: 500px) {
+  .contact-card {
+    justify-content: center;
+  }
+}
 .contact-card__left {
   width: 100%;
   max-width: 260px;
@@ -835,17 +894,37 @@ h1 {
   align-items: start;
   gap: 23px;
 }
+@media (max-width: 500px) {
+  .contact-card__left {
+    align-items: center;
+  }
+}
 .contact-card__title {
   font-weight: 700;
   font-size: 18px;
+}
+@media (max-width: 500px) {
+  .contact-card__title {
+    text-align: center;
+  }
 }
 .contact-card__description {
   font-size: 14px;
   line-height: 20px;
 }
+@media (max-width: 500px) {
+  .contact-card__description {
+    text-align: center;
+  }
+}
 .contact-card__image {
   width: 140px;
   height: 107px;
+}
+@media (max-width: 500px) {
+  .contact-card__image {
+    display: none;
+  }
 }
 .contact-card__input {
   width: 100%;
@@ -853,7 +932,7 @@ h1 {
   height: 35px;
   border: none;
   border-radius: 30px;
-  padding-left: 26px;
+  padding: 0 26px;
   font-size: 14px;
 }
 .contact-card__button {
@@ -871,10 +950,17 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 100%;
   max-width: 1110px;
   margin: auto;
-  height: 120px;
+  padding: 38px 0;
+}
+@media (max-width: 900px) {
+  .footer__main {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 .footer__socials {
   display: flex;
@@ -887,7 +973,9 @@ h1 {
 .footer__right {
   display: flex;
   gap: 40px;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
 .footer__telephone {
   font-size: 16px;

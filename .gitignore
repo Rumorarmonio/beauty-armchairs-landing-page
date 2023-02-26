@@ -1,6 +1,6 @@
-.idea
+/.idea/
 /node_modules/
 /references/
 /.publish/
 /dist/
-package-lock.json
+/package-lock.json

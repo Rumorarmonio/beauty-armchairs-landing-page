@@ -1,0 +1,22 @@
+@import'../../../node_modules/scss-reset/src/css/reset';
+@import 'base/variables';
+@import 'base/mixins';
+
+a {
+    text-decoration: none;
+    color: unset;
+}
+
+body {
+    font: $font;
+    color: $dark-grey;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+@import 'modules/header';
+@import 'modules/intro';
+@import 'modules/content';
+@import 'modules/footer';
